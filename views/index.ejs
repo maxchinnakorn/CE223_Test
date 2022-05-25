@@ -1,0 +1,70 @@
+<%- include('partials/header'); -%>
+    <div class="row mt-4">
+        <div class="col-4">
+            
+        </div>
+        <div class="col-4 center shadow-lg">
+            <h1 style="text-align: center;">Check Lottery</h1> 
+
+            <div class="col-4">
+                <form action="" method="post"  enctype="multipart/form-data">
+                    <select name="round_form" id="round_form" class="form-control">
+                        <% round.forEach ( function ( lot, index ) { %>
+                        <option value=<%= lot.id %>><%= lot.lottery_round %></option>
+                        <% i=lot.id %> 
+                        <% } ); %>
+                    </select>
+                    <label for="lname">Lottery:</label>
+                    <input type="text" id="lname" name="lname" ><br><br>
+                    <button type="submit" class="btn btn-primary mb-2">Check</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="col-4">
+
+        </div>
+        
+    </div>
+    <div class="row mt-4">
+        <div class="col-4">
+            
+        </div>
+        <div class="col-4 center1 shadow-lg">
+            <h1 style="text-align: center;">lottery</h1> 
+            <tbody>
+                <% if ( round.length > 0 ) { %>
+                    <table style="width: 100%;">
+                        <tr>
+                            <th>รอบ</th>
+                            <th>รางวัลที่ 1</th>
+                            <th>รางวัลข้างเคียงรางวัลที่ 1</th>
+                            <th>รางวัลเลขหน้า 3 ตัว</th>
+                        </tr>
+                    <% round.forEach ( function ( record, index ) { %>
+                        
+                            <tr>
+                                <th><%= record.lottery_round; %></th>
+                                <th><%= record.reward_one; %></th>
+                                <th><%= record.reward_two; %></th>
+                                <th><%= record.reward_three; %></th>
+                            </tr>                       
+                    <% } ); %>
+                </table>
+                <% } else { %>
+                    <tr>
+                        <td colspan="100%">- ไม่มีข้อมูล -</td>
+                    </tr>
+                <% } %>            
+            </tbody>
+        </div>
+        
+        <div class="col-4">
+
+        </div>
+        
+    </div>
+
+
+</body>
+</html>

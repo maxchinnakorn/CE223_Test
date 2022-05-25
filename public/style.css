@@ -1,0 +1,16 @@
+.center {
+    margin: auto;
+    height: 50%;
+    background-color: rgb(137, 194, 175);
+  }
+
+.center1 {
+    margin: auto;
+    padding-bottom: 2rem;
+    height: 60%;
+    background-color: rgb(198, 226, 217);
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
